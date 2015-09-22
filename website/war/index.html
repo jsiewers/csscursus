@@ -1,0 +1,132 @@
+<!DOCTYPE html">
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Website</title>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stijl.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="img/nexus.jpg" alt="logo rocvf">
+        </header>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li class="menu-item selected"><a href="#">MenuItem</a></li>
+                    <li class="menu-item"><a href="#">MenuItem</a></li>
+                    <li class="menu-item"><a href="#">MenuItem</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <ul>
+                    <li class="menu-item selected"><a href="#">MenuItem</a></li>
+                    <li class="menu-item"><a href="#">MenuItem</a></li>
+                    <li class="menu-item"><a href="#">MenuItem</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="visual">
+            <div class="left">
+                <div class="date">
+                    Jul
+                    <br>17
+                </div>
+            </div>
+            <div class="right">
+                <div class="img" style="background-image: url('img/hero-image.jpg');">
+                    <div class="date">
+                        Jul
+                        <br>17
+                    </div>
+                    Hier een article
+                </div>
+                <div class="img" style="background-image: url('img/Nexus-6.jpg');">
+                    <div class="date">
+                        Jul
+                        <br>17
+                    </div>
+                    Hier een article
+                </div>
+        </section>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li class="menu-item selected"><a href="#">MenuItem</a></li>
+                    <li class="menu-item"><a href="#">MenuItem</a></li>
+                    <li class="menu-item"><a href="#">MenuItem</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="content">
+            <div class="column">
+                <article>
+                    <div class="article-image">
+                        <img src="img/theverge.jpg" alt="the verge">
+                    </div>
+                    <div class="article-text">
+                        <h2>Titel van het bericht</h2>
+                        <p class="posted-by">
+                            <span class="post-date">Jul 17</span>&nbsp;posted by een of andere..
+                        </p>
+                        <p>ALorem ipsum dolor sit amet, consectetur adipiscing elit. Proin placerat, lectus sed vestibulum iaculis, diam tortor lobortis leo.</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-image">
+                        <img src="img/2phones.jpg" alt="the verge">
+                    </div>
+                    <div class="article-text">
+                        <h2>Titel van het bericht</h2>
+                        <p class="posted-by">
+                            <span class="post-date">Jul 17</span>&nbsp;posted by een of andere..
+                        </p>
+                        <p>ALorem ipsum dolor sit amet, consectetur adipiscing elit. Proin placerat, lectus sed vestibulum iaculis, diam tortor lobortis leo.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="column-article">
+                <div data-ding="1" class="article-selector">
+                    <h3>Titel van het artikel</h3>
+                    <p>Jul 17</p>
+                </div>
+                <div data-ding="2" class="article-selector">
+                    <h3>Titel van het artikel</h3>
+                    <p>Jul 18</p>
+                </div>
+                <div data-ding="3" class="article-selector">
+                    <h3>Titel van het artikel</h3>
+                    <p>Jul 19</p>
+                </div>
+            </div>
+            <div class="column-view">
+                <div id="article-view">lkjh </div>
+            </div>
+        </section>
+        <footer></footer>
+        </div>
+        <script>
+            $(document).ready(function () {           
+            $(".article-selector[data-ding='2']").each(loadArticle);
+            $(".article-selector").click(loadArticle);
+               function loadArticle() {
+                    $("#article-view")
+                        .load("demo-" + $(this).data("ding") + ".html").fadeIn();
+                    reset();
+                    $(this).css('background-color', 'black');
+                    $(this).css('color', 'white');
+                }
+
+                function reset() {
+                    $(".article-selector").css('background-color', 'white');
+                    $(".article-selector").css('color', 'black');
+                }
+            });
+        </script>
+</body>
+
+</html>
