@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Flexbox</title>
+
+    <style>
+        .omsluitend {
+            background-color: aquamarine;
+            width: 1200px;
+            height: 800px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .part-first,
+        .part-second {
+            background-color: antiquewhite;
+            display: flex;
+            flex: 3 0 auto;
+            border: 1px solid black;
+        }
+        
+        .part-second {
+            flex: 1 0 auto;
+            flex-direction: column;
+        }
+        
+        .element {
+            flex: 1 0 auto;
+            background-color: deepskyblue;
+            border: 1px solid black;
+        }
+        
+        .klein-element {
+            flex: 1 0 auto;
+            background-color: darkseagreen;
+            border: 1px solid black;
+        }
+        
+        @media screen and (max-width: 960px) {
+            .omsluitend {
+                width:900px;
+                flex-direction: column;
+            }
+            .part-second {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="omsluitend">
+        <div class="part-first">
+            <div class="element">
+            </div>
+        </div>
+        <div class="part-second">
+            <div class="klein-element">
+            </div>
+            <div class="klein-element">
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
