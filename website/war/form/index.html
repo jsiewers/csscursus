@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Formulier</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        
+        div.table {
+            padding: 20px;
+            display: table;
+            border: 1px solid black;
+        }
+        
+        div.row {
+            display: table-row;
+        }
+        
+        div.cell {
+            padding: 10px;
+            display: table-cell;
+        }
+        
+        div.submit {
+            text-align: right;
+        }
+        
+        div.cell ul {
+            margin-left: 0px;
+            padding: 0px;
+        }
+        
+        div.cell ul li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Voorbeeldformulier</h1>
+    <form action="demo_form.asp">
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+
+                    <div class="table">
+                        <div class="row">
+                            <div class="cell">
+                                <label for="man">Voornaam</label>
+                            </div>
+                            <!--end cell-->
+                            <div class="cell">
+                                <input type="text" name="vnaam" id="vnaam" value="">
+                            </div>
+                            <!--end cell-->
+                        </div>
+                        <!--end row-->
+                        <div class="row">
+                            <div class="cell">
+                                <label for="tsnvgsl">Tussenvoegsel</label>
+                            </div>
+                            <!--end cell-->
+                            <div class="cell">
+                                <input type="text" name="tsnvgsl" id="tsnvgsl" value="">
+                            </div>
+                            <!--end cell-->
+                        </div>
+                        <!--end row-->
+                        <div class="row">
+                            <div class="cell">
+                                <label for="anaam">Achternaam</label>
+                            </div>
+                            <!--end cell-->
+                            <div class="cell">
+                                <input type="text" name="geslacht" id="man" value="">
+                            </div>
+                            <!--end cell-->
+                        </div>
+                        <!--end row-->
+                        <div class="row">
+                            <div class="cell">
+                                <label for="geslacht">Geslacht</label>
+                            </div>
+                            <!--end cell-->
+                            <div class="cell">
+                                <input type="radio" name="geslacht" id="man" value="m"> Man
+                                <input type="radio" name="geslacht" id="vrouw" value="v"> Vrouw
+                            </div>
+                            <!--end cell-->
+                        </div>
+                        <!--end row-->
+                        <div class="row">
+                            <div class="cell">
+                                <label for="klogen">Kleur ogen</label>
+                            </div>
+                            <!--end cell-->
+                            <div class="cell">
+                                <select name="klogen">
+                                    <option>bruin</option>
+                                    <option>blauw</option>
+                                    <option>grijs</option>
+                                    <option>groen</option>
+                                    <option>pimpelpaars</option>
+                                </select>
+                            </div>
+                            <!--end cell-->
+                        </div>
+                        <!--end row-->
+                        <div class="row">
+                            <div class="cell">
+                                <label for="omschrijving">Omschrijving</label>
+                            </div>
+                            <!--end cell-->
+                            <div class="cell">
+                                <textarea name="omschrijving"></textarea>
+                            </div>
+                            <!--end cell-->
+                        </div>
+                        <!--end row-->
+                        <div class="row">
+                            <div class="cell">
+                            </div>
+                            <!--end cell-->
+                            <div class="cell submit">
+                                <input type="submit" value="verstuur">
+                            </div>
+                            <!--end cell-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end table-->
+                </div>
+                <!--end cell-->
+                <div class="cell">
+
+
+                    <div class="table">
+                        <div class="row">
+                            <div class="cell">
+                                <label for="leten">Lekker eten</label>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" name="leten" id="leten" value="sperziebonen"> sperziebonen</li>
+                                    <li>
+                                        <input type="checkbox" name="leten" id="leten" value="sperziebonen"> Aardappelen</li>
+                                    <li>
+                                        <input type="checkbox" name="leten" id="leten" value="sperziebonen"> Hamburger</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end table-->
+
+                </div>
+                <!--end cell-->
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end table-->
+    </form>
+</body>
+
+</html>
