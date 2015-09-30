@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        #book {
+            position:absolute;
+            width:100px;
+            height:100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="clickme">Klik op mij, klik op mij!!!</p>
+    <div id="book"></div>
+    <script>
+        $(document).ready(function () {
+            $("#clickme").click(function () {
+                $("#book").animate({
+                    left: "+=50",
+                    height: "toggle"
+                }, 2000, function () {
+                    // Animation complete.
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

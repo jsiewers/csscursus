@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Insert title here</title>
+    <style>
+        div.imageslider {
+            width: 200px;
+            height: 109px;
+            overflow: hidden;
+        }
+        
+        ul.slides {
+            width: 660px;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        ul.slides>li {
+            float: left;
+            list-style-type: none;
+            margin-left: 0px;
+            padding: 0px;
+            width: 220px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+<!--
+    <p>bla</p>
+-->
+    <div class="imageslider">
+        <ul class="slides">
+            <li><img src="../img/blade.jpg"></li>
+            <li><img src="../img/meissie.jpg"></li>
+            <li><img src="../img/meissie2.jpg"></li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var marginLeft = 0;
+            $('li').click(function () {
+                var li = this;
+                marginLeft -= 220;
+                if (marginLeft <= -660) {
+                    li = 'li';
+                    marginLeft = 0;
+                }
+/*
+                $('p').html(marginLeft);
+*/
+                $(li).animate({
+                    marginLeft: marginLeft
+                }, function () {
+                    //Animation complete
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
