@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <meta charset="US-ASCII">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $('li').eq(2).html('producten');
+            $('li').eq(1).html('contact');
+            $('li').eq(0).html('home');
+            $('li').css('display', 'inline');
+            $('li').css('background-color', '#ccc');
+            $('li').css('padding', '20px');
+        });
+    </script>
+
+    <ul>
+        <li>bla</li>
+        <li>foo</li>
+        <li>spam</li>
+    </ul>
+</body>
+
+</html>
