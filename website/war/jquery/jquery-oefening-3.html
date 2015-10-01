@@ -6,13 +6,13 @@
     <title>Insert title here</title>
     <style>
         div.imageslider {
-            width: 200px;
+            width: 220px;
             height: 109px;
             overflow: hidden;
         }
         
         ul.slides {
-            width: 660px;
+            width: 880px;
             margin: 0px;
             padding: 0px;
         }
@@ -29,7 +29,7 @@
 </head>
 
 <body>
-<!--
+    <!--
     <p>bla</p>
 -->
     <div class="imageslider">
@@ -42,23 +42,22 @@
     <script>
         $(document).ready(function () {
             var marginLeft = 0;
+            var firstImage = $('ul.slides>li:first').html();
+            $('ul.slides').append("<li>" + firstImage + "</li>");
             $('li').click(function () {
                 var li = this;
                 marginLeft -= 220;
-                if (marginLeft <= -660) {
-                    li = 'li';
-                    marginLeft = 0;
-                }
-/*
-                $('p').html(marginLeft);
-*/
-                $(li).animate({
+                $('ul').animate({
                     marginLeft: marginLeft
                 }, function () {
                     //Animation complete
+                    if (marginLeft <= -660) {
+                        $('ul').css("margin-left", "0px");
+
+                        marginLeft = 0;
+                    }
                 });
             });
-
         });
     </script>
 </body>

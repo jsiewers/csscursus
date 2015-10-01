@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Demo</title>
+    <style>
+        #demo {
+            width:200px;
+            height:100px;
+            border: 1px solid black; 
+        }
+     </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <form>
+    <input type="number" id="invoer" value="">
+        <button id="knop">verstuur</button>
+    </form>
+    
+    <div id="demo">
+    </div>
+    <script>
+    
+    $('#knop').click(function() {
+    var x = parseInt($('#invoer').value);
+    if (x < 1 || x > 10) { 
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    $('#demo').html(text);
+    }):
+    </script>
+</body>
+
+</html>
