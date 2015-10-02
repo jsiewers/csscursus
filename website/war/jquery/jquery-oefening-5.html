@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Functies</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        function myFunction() {
+            document.getElementById('demo').innerHTML = 'Boe';
+        }
+
+        $(document).ready(function () {
+            $('button').click(function () {
+                $('p#demo').html('Foo');
+                console.log(typeof $('p#demo').html())
+                    //myFunction();
+            });
+
+
+        });
+
+
+var car = {
+    merk: 'audi',
+    type: 'quattro',
+    lengte: '435',
+    toeter: 'honkhonk',
+    toeteren: function () {
+        return 'de toeter van de ' + this.merk + ' ' + this.type + ' klinkt als: ' + this.toeter;
+    }
+}
+        console.log(car.toeteren());
+    </script>
+</head>
+
+<body>
+    <p id="demo">Bla</p>
+    <button>Klik mij!</button>
+</body>
+
+</html>
