@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Javascript Object</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        var team = {
+            teamnaam:"",
+            spelers:[],
+            voegSpelerToe: function (speler) {
+                this.spelers.push(speler);
+            }
+        }
+        
+        var speler = {
+            voornaam: "",
+            achternaam: "",
+            toString: function() {
+                return this.voornaam + " " + this.achternaam; 
+            }
+        }
+        
+        var team1 = Object.create(team);
+        team1.teamnaam = "Heren A1";
+        
+        var team2 = Object.create(team);
+        team2.teamnaam = "Heren B1";
+        
+        var speler1 = Object.create(speler);
+        var speler2 = Object.create(speler);
+        speler1.voornaam = "Harry";
+        speler1.achternaam = "van Beek";
+        speler2.voornaam = "Bert";
+        speler2.achternaam = "Dingedong";
+        
+        team2.voegSpelerToe(speler1);
+        team2.voegSpelerToe(speler2);
+        
+        for(sp of team2.spelers) {
+           console.log(sp.toString());
+        }
+  
+    </script>
+</head>
+
+<body>
+    <h1>bla</h1>
+</body>
+
+</html>

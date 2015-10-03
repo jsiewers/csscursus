@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="US-ASCII">
+    <title>Insert title here</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        
+        div {
+            width: 200px;
+            height: 30px;
+        }
+        
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        
+        td.prijs {
+            text-align: right;
+        }
+        
+        table {
+            width: 500px;
+        }
+        
+        div>input {
+            float: right;
+        }
+    </style>
+    <script>
+        function auto(merk, model, prijs) {
+            this.merk = merk;
+            this.model = model;
+            this.prijs = prijs;
+        }
+
+        var garage = {
+            autos: [],
+                parkeerAuto: function (auto) {
+                    //var garage = this;
+                    this.autos.push(auto);
+                },
+                toonAutos: function () {
+                    $this = this;
+                    $('table').empty();
+                    $('table').html(
+                        '<tr></tr><th>Merk</th><th>Model</th><th>Prijs</th><th></th></tr>' +
+                        '<tr><td colspan="2">Totaal</td><td class="prijs">??</td></tr>');
+                    $.each(this.autos, function (i, a) {
+                        $('table tr:last').before(
+                            '<tr><td class="effe">' + a.merk + '</td>\n' +
+                            '\t<td>' + a.model + '</td>\n' +
+                            '\t<td class="prijs">' + a.prijs + '</td>\n' +
+                            '\t<td><a bla="' + i + '" href=#">verwijder</a></td>\n' +
+                            '</tr>\n'
+                        );
+                        //var selector = $('td>a').data(i);
+                        $('td>a[bla=' + i + ']').on('click', function () {
+                            $this.verwijderAuto(i);
+                        });
+                    });
+                },
+                berekenTotaal: function () {
+                    var totaal = 0;
+                    for (a of this.autos) {
+                        totaal += parseInt(a.prijs);
+                    }
+                    $('table tr:last td:last').html(totaal);
+                },
+                verwijderAuto: function (ind) {
+                    console.log(this.autos + ind);
+                    this.autos.splice(ind, 1);
+                    this.toonAutos();
+                    this.berekenTotaal();
+                }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <label for="merk">Merk</label>
+        <input type="text" name="merk" id="merk">
+    </div>
+    <div>
+        <label for="model">Model</label>
+        <input type="model" name="type" id="model">
+    </div>
+    <div>
+        <label for="prijs">Prijs</label>
+        <input type="text" name="prijs" id="prijs">
+    </div>
+    <div>
+        <button name="knop">verstuur</button>
+    </div>
+    <div id="wrapper">
+        <table></table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                garage.parkeerAuto(new auto($('input#merk').val(), $('input#model').val(), $('input#prijs').val()));
+                garage.toonAutos();
+                garage.berekenTotaal();
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
