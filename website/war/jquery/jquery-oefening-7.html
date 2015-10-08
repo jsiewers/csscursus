@@ -7,41 +7,66 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         var team = {
-            teamnaam:"",
-            spelers:[],
+            teamnaam: "",
+            bla: "",
+            spelers: [],
             voegSpelerToe: function (speler) {
                 this.spelers.push(speler);
+            },
+            toJSON: function () {
+                bjs = "";
+                for (sp of this.spelers) {
+                    bjs += JSON.stringify(sp);
+                }
+                return {teamnaam: this.teamnaam, spelers:bjs};
             }
         }
-        
+
         var speler = {
+            idspeler: 0,
             voornaam: "",
             achternaam: "",
-            toString: function() {
-                return this.voornaam + " " + this.achternaam; 
+            toString: function () {
+                return this.voornaam + " " + this.achternaam;
+            },
+            setVoornaam: function (vn) {
+                this.voornaam = vn;
+                return this;
+            },
+            setAchternaam: function (an) {
+                this.achternaam = an;
+                return this;
             }
         }
-        
+
         var team1 = Object.create(team);
         team1.teamnaam = "Heren A1";
-        
+
         var team2 = Object.create(team);
         team2.teamnaam = "Heren B1";
-        
+        team2.bla = "bla";
+        if (Array.isArray(team2.spelers)) {
+            console.log("Yep het is een array");
+        }
+
         var speler1 = Object.create(speler);
         var speler2 = Object.create(speler);
+        speler1.idspeler = 1;
         speler1.voornaam = "Harry";
         speler1.achternaam = "van Beek";
+        speler2.idspeler = 1;
         speler2.voornaam = "Bert";
         speler2.achternaam = "Dingedong";
-        
+
         team2.voegSpelerToe(speler1);
         team2.voegSpelerToe(speler2);
+       // team2.voegSpelerToe(Object.create(speler).setVoornaam('Piet').setAchternaam('de Vries'));
+        //team2.voegSpelerToe(Object.create(speler, {voornaam: {value: "Klaas"}, achternaam:{value:"Jansen"}}));
         
-        for(sp of team2.spelers) {
-           console.log(sp.toString());
-        }
-  
+        console.log(JSON.stringify(team2));
+
+
+
     </script>
 </head>
 
