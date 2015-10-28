@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        var timer = {
+            teller: 0,
+            telopbij(number) {
+                this.teller = number;
+                this.teller++;
+                return this.teller;
+            }
+        };
+    </script>
+    <style>
+        div {
+            float: left;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $('div').on('click', function () {
+                this.textContent = timer.telopbij(parseInt(this.textContent));
+                this.css(background-color)
+                console.log(this.textContent);
+            });
+
+
+        });
+    </script>
+
+    <div>0</div>
+    <div>0</div>
+    <div>0</div>
+    <div>0</div>
+</body>
+
+</html>

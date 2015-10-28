@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <script>
+        var autos = {
+            volvo: {
+                kleur: 'rood',
+                kilometerstand: 112409
+            },
+            ford: {
+                kleur: 'blauw',
+                kilometerstand: 62459
+            },
+            opel: {
+                kleur: 'groen',
+                kilometerstand: 87321
+            },
+            fiat: {
+                kleur: 'beige',
+                kilometerstand: 920018
+            },
+            volkswagen: {
+                kleur: 'zwart',
+                kilometerstand: 134577
+            }
+        }
+
+
+
+        var coureurs = [
+            {
+                naam: 'Jan',
+                merk: 'volvo'
+            },
+            {
+                naam: 'Kees',
+                merk: 'fiat'
+            },
+            {
+                naam: 'Piet',
+                merk: 'opel'
+            },
+            {
+                naam: 'Karel',
+                merk: 'volkswagen'
+            },
+            {
+                naam: 'Mien',
+                merk: 'ford'
+            }
+
+        ]
+
+        for (var coureur in coureurs) {
+            console.log(coureurs[coureur].naam + '-' 
+                        + autos[coureurs[coureur].merk].kilometerstand);
+        }
+
+        for (var merk in autos) {
+            console.log(autos['volvo'].kleur)
+        }
+    </script>
+
+
+</body>
+
+</html>
